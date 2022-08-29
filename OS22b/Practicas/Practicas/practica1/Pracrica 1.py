@@ -10,7 +10,7 @@ OringCity = input("Cual es tu ciudad de origen:")   #Tipo de dato: Cadena de Car
 Foring = input("Eres foraneo, si o no:")            #Tipo de dato: Cadena de Caracteres
 PostalCode = input("Codigo postal:")                #Tipo de dato: Cadena de Caracteres
 Hight = float(input("Cual es tu altura:"))          #Tipo de dato: Decimal 
-Weight =float(input("Cual es tu peso:"))            #Tipo de dato: Decimal 
+Weight = float(input("Cual es tu peso:"))           #Tipo de dato: Decimal 
 Carrera = input("Cual es tu carrera:")              #Tipo de dato: Cadena de Caracteres
 
 for l in [Name,lastname,Age,Expediente,OringCity,Foring,PostalCode,Hight,Weight,Carrera]:
@@ -18,10 +18,11 @@ for l in [Name,lastname,Age,Expediente,OringCity,Foring,PostalCode,Hight,Weight,
 
 print(Name,lastname)
 print(Expediente,Carrera)
-if(Foring=="si"){
+
+if(Foring=="si"):
     print(OringCity,"Es foraneo")
-}else{
+else:
     print(OringCity,"No es forraneo")
-}
+
 
 print(str(Hight)+"mts",str(Weight)+"kg")
