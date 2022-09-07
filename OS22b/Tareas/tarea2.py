@@ -62,7 +62,7 @@ elif Problema == 7:
     Numero = int(input("Dame un numero entero: "))
     Num_par = (Numero+2)-(Numero%2)
 
-    print(Num_par)
+    print("El siguiente par es:",Num_par)
 
 elif Problema == 8:
 
@@ -137,6 +137,8 @@ elif Problema == 15:
     Distacia = (((x2-x1)**2)+((y2-y1)**2))**0.5
     punto_mx = ((x1+x2)/2)
     punto_my = ((y1+y2)/2)
+
     print("La dsitancia entre los dos punto es:",Distacia,"y el punto medio es:","(",punto_mx,",",punto_my,")")
+
 else:
     print("No existe el problema XD")
