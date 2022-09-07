@@ -6,7 +6,7 @@ Problema = int(input("Que problema quieres resolver 1-15: "))
 if Problema == 1:
 
     #*Dos variable de tipo Float
-    #!(a) es mayor a (b) 
+    #! (a) es mayor a (b) 
 
     a = float(input("Dame un numero entero: "))
     b = float(input("Dame otro numero entero: "))
@@ -29,9 +29,33 @@ elif Problema == 2:
         print("No es divisible entre nueve -_-")
 
 elif Problema == 3:
-    print()
+
+    #*Dos varibles de tipo entero 
+    #! n modulo de a es = 0 
+
+    a = int(input("Dame un numero entero a: "))
+    n = int(input("Dame otro numero entero n: "))
+
+    if n%a == 0:
+        print("n es multiplo de a ^w^!!!")
+    else:
+        print("n no es multiplo de a -_-")
+    
 elif Problema == 4:
-    print()
+
+    #*Tres varibles de tipo float
+    #! si b^2-4ac >= 0 
+
+    print("Dame los valores de a, b, c para la funcion ax^2+bx+c")
+    a = float(input("Dame un nuemor para a: "))
+    b = float(input("Dame un nuemor para b: "))
+    c = float(input("Dame un nuemor para c: "))
+
+    if (b**2)-(4*a*c) >= 0:
+        print("Tiene soluciones reales ^w^!!!")
+    else:
+        print("No tiene soluciones reales -_-")
+
 elif Problema == 5:
     print()
 elif Problema == 6:
