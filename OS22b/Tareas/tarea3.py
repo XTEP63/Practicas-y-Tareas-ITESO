@@ -17,7 +17,17 @@ if Problema == 1:
         print("No estan en orden acendente -_-")
 
 elif Problema == 2:
-    print()
+
+    #*Una varible de tipo entero 
+    #! EL modulo 9 de n es = 0
+
+    n = int(input("Dame un numeor natural: "))
+
+    if n%9 == 0:
+        print("Es divisible entre nueve ^w^!!!")
+    else:
+        print("No es divisible entre nueve -_-")
+
 elif Problema == 3:
     print()
 elif Problema == 4:
