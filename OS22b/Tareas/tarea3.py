@@ -47,9 +47,9 @@ elif Problema == 4:
     #! si b^2-4ac >= 0 
 
     print("Dame los valores de a, b, c para la funcion ax^2+bx+c")
-    a = float(input("Dame un nuemor para a: "))
-    b = float(input("Dame un nuemor para b: "))
-    c = float(input("Dame un nuemor para c: "))
+    a = float(input("Dame un numero para a: "))
+    b = float(input("Dame un numero para b: "))
+    c = float(input("Dame un numero para c: "))
 
     if (b**2)-(4*a*c) >= 0:
         print("Tiene soluciones reales ^w^!!!")
@@ -57,9 +57,31 @@ elif Problema == 4:
         print("No tiene soluciones reales -_-")
 
 elif Problema == 5:
-    print()
+
+    #*Tres varibles de tipo flotante 
+    #! si a > b > c 
+
+    a = float(input("Dame un numero para a: "))
+    b = float(input("Dame un numero para b: "))
+    c = float(input("Dame un numero para c: "))
+
+    if a > b and b > c: 
+        print("Estan ordenados de manera estrictamente decendente ^w^!!!")
+    else:
+        print("No estan ordenadados ede manera estrictamamente decendente -_-")
+
 elif Problema == 6:
-    print()
+
+    #*Una varible de tipo float
+    #! n%2 = 0 o 1
+
+    n = float(input("Dame un numero: "))
+    
+    if n%2 == 0:
+        print("Es un numero par ^w^!!!")
+    else:
+        print("No es un numero par -_-")
+
 elif Problema == 7:
     print()
 elif Problema == 8:
