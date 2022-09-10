@@ -181,7 +181,21 @@ elif Problema == 13:
         print("c es el menor ^w^!!!")
         
 elif Problema == 14:
-    print()
+
+    #*Tres varibles de tipo entero 
+    #! a > b y a > c, b > a y b > c, c > a y c > b
+
+    a = float(input("Dame un numero para a: "))
+    b = float(input("Dame un numero para b: "))
+    c = float(input("Dame un numero para c: "))
+
+    if a > b and a > c:
+        print("a es el mayor ^w^!!!")
+    elif b > a and b > c:
+        print("b es el mayor ^w^!!!")
+    elif c > a and c > b: 
+        print("c es el mayor ^w^!!!")
+    
 elif Problema == 15:
     print()
 else:
