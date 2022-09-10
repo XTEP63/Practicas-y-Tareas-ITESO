@@ -131,7 +131,7 @@ elif Problema == 10:
     y = float(input("Dame un numero para la cordenada y: "))
     r = float(input("Dame le radio de la circunferencia: "))
 
-    if x**2 + y **2 <= r**2:
+    if x**2 + y **2 == r**2:
         print("El punto esta dentro de la circunferencia ^w^!!!")
     else:
         print("El punto no esta dentro de la circunferencia -_-")
@@ -205,7 +205,7 @@ elif Problema == 15:
     lado2 = float(input("Dame la longuitud del lado2: "))
     lado3 = float(input("Dame la longuitud del lado3: "))
 
-    if lado1 + lado2 > lado3 or lado3 + lado2 > lado1 or lado1 + lado3 > lado2:
+    if lado1 + lado2 > lado3 and lado3 + lado2 > lado1 and lado1 + lado3 > lado2:
         print("Si se puede formar un triangulo ^w^!!!")
     else:
         print("No pueden formar un triangulo -_-")
