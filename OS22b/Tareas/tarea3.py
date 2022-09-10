@@ -179,6 +179,8 @@ elif Problema == 13:
         print("b es el menor ^w^!!!")
     elif c < a and c < b: 
         print("c es el menor ^w^!!!")
+    else:
+        print("Hay un nuemero repetido -_-")
         
 elif Problema == 14:
 
