@@ -197,7 +197,19 @@ elif Problema == 14:
         print("c es el mayor ^w^!!!")
     
 elif Problema == 15:
-    print()
+
+    #*Tres varibles de tipo float
+    #! lado1 + lado2 > lado3
+
+    lado1 = float(input("Dame la longuitud del lado1: "))
+    lado2 = float(input("Dame la longuitud del lado2: "))
+    lado3 = float(input("Dame la longuitud del lado3: "))
+
+    if lado1 + lado2 > lado3 or lado3 + lado2 > lado1 or lado1 + lado3 > lado2:
+        print("Si se puede formar un triangulo ^w^!!!")
+    else:
+        print("No pueden formar un triangulo -_-")
+
 else:
 
     print("El problema no existe XD")
