@@ -197,6 +197,8 @@ elif Problema == 14:
         print("b es el mayor ^w^!!!")
     elif c > a and c > b: 
         print("c es el mayor ^w^!!!")
+    else:
+        print("Hay un nuemero repetido -_-")
     
 elif Problema == 15:
 
