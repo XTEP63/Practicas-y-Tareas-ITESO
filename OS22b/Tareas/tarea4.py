@@ -32,7 +32,7 @@ elif Problema == 3:
     if xp + xp_monster == xp_up:
         print("Suuuuu puedes subir de nivel ^w^!!!")
     else:
-        print("No puedes subir de nivel:")
+        print("No puedes subir de nivel -_-")
 
 elif Problema == 4:
 
@@ -44,26 +44,26 @@ elif Problema == 4:
         a = a*100
         if b >= c:
             b = b*10
-            print(a+b+c)
+            print(a+b+c,"^w^!!!")
         elif c >= b: 
             c = c*10
-            print(a+c+b)
+            print(a+c+b,"^w^!!!")
     elif b >= a and b >= c:
         b = b*100
         if a > c:
             a = a*10
-            print(b+a+c)
+            print(b+a+c,"^w^!!!")
         elif c > a: 
             c = c*10
-            print(b+c+a)
+            print(b+c+a,"^w^!!!")
     elif c >= a and c >= b:
         c = c*100
         if b > a:
             b = b*10
-            print(c+b+a)
+            print(c+b+a,"^w^!!!")
         elif a > b: 
             a = a*10    
-            print(c+a+b)
+            print(c+a+b,"^w^!!!")
     
 elif Problema == 5:
     Carga = float(input("Cual es la carga maxima de tu personaje"))
@@ -73,12 +73,12 @@ elif Problema == 5:
     t2_v = float(input("Cual es le valor del segundo objeto"))
     
     if t1_p + t2_p <= Carga:
-        print("El valor de tu inventarios es:", t1_v + t2_v)
+        print("El valor de tu inventarios es:", t1_v + t2_v,"^w^!!!")
     else:
         if t1_v >= t2_v:
-            print("El valor de tu inventario es:", t1_v)
+            print("El valor de tu inventario es:", t1_v,"^w^!!!")
         else:
-            print("El valor de tu inventario es:", t2_v)
+            print("El valor de tu inventario es:", t2_v,"^w^!!!")
 elif Problema == 6:
 
     año = int (input("Dame un año: "))
@@ -94,14 +94,14 @@ elif Problema == 6:
         bisiesto = "bisiesto"
 
     if mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 8 or mes == 10 or mes == 12:
-        print("El mes tiene 31 dias")
+        print("El mes tiene 31 dias ^w^!!!")
     elif mes == 4 or mes == 6 or mes == 9 or mes == 11:
-        print("El mes tiene 30 dias")
+        print("El mes tiene 30 dias ^w^!!!")
     elif mes == 2: 
         if bisiesto == "bisiesto":
-            print("El mes tiene 29 dias")
+            print("El mes tiene 29 dias ^w^!!!")
         else:
-            print("El mes tiene 28 dias")
+            print("El mes tiene 28 dias ^w^!!!")
     
 elif Problema == 7:
     
@@ -109,12 +109,12 @@ elif Problema == 7:
     b = int(input("Dame un numero para b: "))
 
     if a == b:
-        print("El ciclo es finito")
+        print("El ciclo es finito ^w^!!!")
     elif b%2 == 1 and a%2 == 1:
-        print("El ciclo es finito")
+        print("El ciclo es finito ^w^!!!")
     elif b%2 == 0 and a%2 == 0:
-        print("El ciclo es finito")
+        print("El ciclo es finito ^w^!!!")
     else:
-        print("El ciclo es infinito")
+        print("El ciclo es infinito -_-")
 else:
     print("El problema no existe XD")
