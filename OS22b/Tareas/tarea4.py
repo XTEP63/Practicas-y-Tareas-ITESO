@@ -27,9 +27,9 @@ elif Problema == 3:
 
     xp = float(input("Cual es la cantida de xp actual de tu personaje: "))
     xp_up = float(input("Cuanta xp se ocupa para subir de nivel: "))
-    xp_monster = float(input("Cuanta xp te da el moustro que acabas de matar"))
+    xp_monster = float(input("Cuanta xp te da el moustro que acabas de matar: "))
     
-    if xp + xp_monster == xp_up:
+    if xp + xp_monster <= xp_up:
         print("Suuuuu puedes subir de nivel ^w^!!!")
     else:
         print("No puedes subir de nivel -_-")
@@ -66,6 +66,7 @@ elif Problema == 4:
             print(c+a+b,"^w^!!!")
     
 elif Problema == 5:
+
     Carga = float(input("Cual es la carga maxima de tu personaje"))
     t1_p = float(input("Cual es le peso del primer objeto"))
     t2_p = float(input("Cual es le peso del segundo objeto"))
@@ -79,6 +80,7 @@ elif Problema == 5:
             print("El valor de tu inventario es:", t1_v,"^w^!!!")
         else:
             print("El valor de tu inventario es:", t2_v,"^w^!!!")
+
 elif Problema == 6:
 
     año = int (input("Dame un año: "))
@@ -116,5 +118,6 @@ elif Problema == 7:
         print("El ciclo es finito ^w^!!!")
     else:
         print("El ciclo es infinito -_-")
+
 else:
     print("El problema no existe XD")
