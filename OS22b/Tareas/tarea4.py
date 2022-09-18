@@ -81,8 +81,8 @@ elif Problema == 5:
             print("El valor de tu inventario es:", t2_v)
 elif Problema == 6:
 
-    año = int (input("Dame un año"))
-    mes = int(input("Dame el numero de mes"))
+    año = int (input("Dame un año: "))
+    mes = int(input("Dame el numero de mes: "))
 
     if año % 4 != 0:
         bisiesto = "No es bisiesto"
@@ -104,6 +104,17 @@ elif Problema == 6:
             print("El mes tiene 28 dias")
     
 elif Problema == 7:
-    print()
+    
+    a = int(input("Dame un numero para a: "))
+    b = int(input("Dame un numero para b: "))
+
+    if a == b:
+        print("El ciclo es finito")
+    elif b%2 == 1 and a%2 == 1:
+        print("El ciclo es finito")
+    elif b%2 == 0 and a%2 == 0:
+        print("El ciclo es finito")
+    else:
+        print("El ciclo es infinito")
 else:
     print("El problema no existe XD")
