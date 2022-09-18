@@ -67,8 +67,18 @@ elif Problema == 4:
     
 elif Problema == 5:
     Carga = float(input("Cual es la carga maxima de tu personaje"))
+    t1_p = float(input("Cual es le peso del primer objeto"))
+    t2_p = float(input("Cual es le peso del segundo objeto"))
+    t1_v = float(input("Cual es le valor del primer objeto"))
+    t2_v = float(input("Cual es le valor del segundo objeto"))
     
-    print()
+    if t1_p + t2_p <= Carga:
+        print("El valor de tu inventarios es:", t1_v + t2_v)
+    else:
+        if t1_v >= t2_v:
+            print("El valor de tu inventario es:", t1_v)
+        else:
+            print("El valor de tu inventario es:", t2_v)
 elif Problema == 6:
 
     año = int (input("Dame un año"))
