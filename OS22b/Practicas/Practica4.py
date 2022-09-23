@@ -1,6 +1,4 @@
-y = 1 
-
-while y == 1:
+while True:
 
     try:
         edad = int(input("Escribe tu edad: "))
@@ -12,6 +10,6 @@ while y == 1:
         print("Debes escribir un número positivo o menor a 110 -_-.")
         continue
     else:
-        y = 0
+        break
 
 print("Si cumples con los parámetros")
