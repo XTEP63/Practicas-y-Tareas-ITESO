@@ -178,18 +178,46 @@ while True:
                 break
             break
         print("Son numero consecutivos acendentes ^w^")
-        print()
+
     elif problema == 8:
 
-        print()
+        while True:
+            print("Dame una palabra de 8 letras")
+            palabra = input("La palabra es: ")
+
+            if len(palabra) < 8:
+                print("Tiene menos de 8 letras-_-")
+                continue
+            else:
+                break
+        print("Tiene 8 letras o mas ^w^")
 
     elif problema == 9:
 
-        print()
+        while True:
+            print("Dame una palabra que termine en N S o vocal")
+            palabra = input("La palabra es: ")
+
+            lis=["n","s","a","e","i","o","u"]
+            if palabra[-1] in lis:
+                break
+            else:
+                print("No termina en N S o vocal")
+                continue
+        print("Termina en N s o vocal ^w^")
 
     elif problema == 10:
 
-        print()
+        while True:
+            palabra = input("Dame una frase que termine con un sogno de puntucion: ")
+
+            lis=[".","!","?",";",",",":"]
+            if palabra[-1] in lis:
+                break
+            else:
+                print("No termina con un signo de puntucion -_-")
+                continue
+        print("Si tienete signo de puntucion final ^w^")
 
     
     
