@@ -113,7 +113,7 @@ while True:
                 print("Debes escribir un número -_-")
                 continue
 
-            if num1 < num2 or num2 < num3:
+            if num1 > num2 or num2 > num3:
                 print("No son acendentes -_-")
                 continue
             elif num2 != num1 + 1 or num3 != num2 + 1:
