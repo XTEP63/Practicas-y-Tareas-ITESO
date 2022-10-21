@@ -1,29 +1,21 @@
-fil=int(input())
-col=int(input())
-positionx=int(input())
-positiony=int(input())
-movementx=int(input())
-movementy=int(input())
-movemts=int(input())
+filas=int(input())
+columnas=int(input())
+x=int(input())
+y=int(input())
+movimientox=int(input())
+movimientoy=int(input())
+k=int(input())
 
-lista=[["" for j in range(fil)] for k in range(col)]
-
-for i in range(movemts):
-    
-    if positionx + movementx in range(0,len(lista[0])):
-        positionx += movementx
-    else:
-        positionx -= movementx
-            
-            
-        
-    if positiony + movementy <= len(lista) and positiony + movementy >= 0:
-        positiony += movementy
-    else: 
-        movementy *= -1
-        
-print("("+str(positionx)+","+str(positiony)+")")
-        
+for i in range(k):
+    x+=movimientox
+    y+=movimientoy
+    if x>filas-1 or x<0:
+        movimientox*=(-1)
+        x+=movimientox
+    if y>columnas-1 or y<0:
+        movimientoy*=(-1)
+        y+=movimientoy
+print(str(x)+","+str(y))
     
     
     
