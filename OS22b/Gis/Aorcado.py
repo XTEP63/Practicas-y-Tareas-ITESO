@@ -1,4 +1,4 @@
-lineas = [line.rstrip('\n') for line in open("Preguntas.txt")]
+lineas = [line.rstrip('\n') for line in open("G.txt")]
 
 CARD_MAP = {
     1: lineas[0], 
