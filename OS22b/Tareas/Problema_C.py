@@ -1,5 +1,8 @@
 while True:
-    num_1 = input()
+    try:
+        num_1 = input()
+    except :
+        break
     
     if num_1 == "0" or num_1 == "":
         break
