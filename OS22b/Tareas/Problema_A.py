@@ -25,16 +25,15 @@ def encrypt(text, key):
     encrypted = []    
     starting_index = 0
     for letter in text:
-    # if it's alphanumerical, keep it that way
-    # find alphabet position
+    
         rotation = alphabet_position(key[starting_index])
-    # if it's a space or non-alphabetical character, append and move on
+    
         if not letter in alphabet_pos:
             encrypted.append(letter)
         elif letter.isalpha():            
             encrypted.append(rotate(letter, rotation))             
 
-    #if we've reached last index, reset to zero, otherwise + by 1
+    
         if starting_index == (len(key) - 1): 
             starting_index = 0
         else: 
