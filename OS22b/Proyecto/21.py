@@ -51,7 +51,7 @@ def show_hand(name, cards):
     else:
         note = ""
 
-    print (+name,"Hand:" ,faces,"Total:" ,val, note)    
+    print (name,"Hand:" ,faces,"Total:" ,val, note)    
 
 #!-----------------------FIN DE FUNCIONES-----------------------------------
 
