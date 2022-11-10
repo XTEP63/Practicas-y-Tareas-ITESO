@@ -38,7 +38,7 @@ def show_hand(name, cards):
     else:
         note = ""
 
-    print (name, faces[0], faces[1], val, note)
+    print (name, faces, val, note)
 
 
 # Deal 2 cards to both the dealer and a player and show their hands
