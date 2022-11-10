@@ -1,8 +1,6 @@
 from random import randint
 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
-print(lineas)
-
 
 CARD_MAP = {
     1: lineas[0], 
@@ -23,7 +21,7 @@ CARD_MAP = {
 def deal():
     return randint(1, 13)
 
-def _get_hand_value(cards):
+def get_hand_value(cards):
     
     val = 0
     for card in cards:
@@ -39,10 +37,41 @@ def _get_hand_value(cards):
     else:
         return val    
     
-cont = 0 
-cards = (deal(), deal(), deal())
-val = _get_hand_value(cards)
-faces = [CARD_MAP[card] for card in cards]
+def show_hand(name, cards):
+    faces = [CARD_MAP[card] for card in cards]
+    val = get_hand_value(cards)
 
-print(faces,val)
+    if val == 21:
+        note = "BLACK JACK! ^w^"
+    elif val > 21:
+        note = "PERDISTE -_-"
+    else:
+        note = ""
+
+    print (name,"Hand:" ,faces,"Total:" ,val, note)    
+    
+list_yes = ["si","Si","si","sI"]
+list_no = ["no","No","NO","nO"]
+list_players = ["Dealear"]
+roud =True
+
+while roud == True:
+    Players = int(input("Cuantos jugadores van a jugar: "))
+
+    for i in range(Players):
+        list_players.append("Player" + str(i + 1))
+
+    for name in list_players:
+        cards = (deal(), deal(), deal())
+        show_hand(name, cards)
+        
+    roud = input("Quieres jugar otras ronda ?: ")
+    
+    if roud in list_yes:
+        roud = True
+    elif roud in list_no:
+        roud = False
+
+
+
 
