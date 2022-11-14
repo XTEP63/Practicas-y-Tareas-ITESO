@@ -1,3 +1,4 @@
+"""
 n = int(input())
 
 for i in range (n):
@@ -16,3 +17,34 @@ for i in range (n):
         else:
             minimo = lista_secuecias[k+1]
     print(minimo)
+"""
+repet=int(input())
+for i in range(repet):
+    entr=input()
+    en=entr.split(" ")
+    cadenas=int(en[0])
+    longitud=int(en[-1])
+    cad=[]
+    cf=[]
+    cfinal=""
+    for c in range(cadenas):
+        cad.append(input())
+    for s in range(longitud):
+        l=[]
+        for g in range(cadenas):
+            l.append(cad[g][s])
+        A=l.count("A")
+        C=l.count("C")
+        G=l.count("G")
+        T=l.count("T")
+        if A>=C and A>=G and A>=T:
+            cf.append("A")
+        if C>A and C>=G and C>=T:
+            cf.append("C")
+        if G>A and G>C and G>=T:
+            cf.append("G")
+        if T>A and T>G and T>C:
+            cf.append("T")
+    for Z in range(len(cf)):
+        cfinal=cfinal+cf[Z]
+    print(cfinal)
