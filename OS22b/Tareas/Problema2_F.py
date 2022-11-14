@@ -16,8 +16,3 @@ for i in range (n):
         else:
             minimo = lista_secuecias[k+1]
     print(minimo)
-    
-    
-    
-
-
