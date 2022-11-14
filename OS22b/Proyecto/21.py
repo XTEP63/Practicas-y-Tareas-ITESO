@@ -1,5 +1,4 @@
 from random import randint
-import colorsys
 
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
@@ -83,7 +82,7 @@ while roud == True:
         list_players_begin.append("Player" + str(i + 1))
 
     for name in list_players_begin:
-        cards = (deal(), deal(), deal())
+        cards = (deal(), deal(),deal())
         show_hand(name, cards)
         
     roud = input("Quieres jugar otras ronda ?: ")
@@ -99,7 +98,3 @@ while roud == True:
             print("Si o No, -_-")
             roud = input("Quieres jugar otras ronda ?: ")
             continue
-
-
-
-
