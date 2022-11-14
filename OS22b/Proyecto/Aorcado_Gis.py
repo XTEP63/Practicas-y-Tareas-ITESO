@@ -65,7 +65,7 @@ HISTORIA = {
     "terremoto": lineas[3], 
     "nazi": lineas[4], 
     "cempasuchil": lineas[5], 
-    "anaglicismo": lineas[6], 
+    "anglicismos": lineas[6], 
     "homero": lineas[7], 
     "thriller": lineas[8], 
     "mapas": lineas[9] 
@@ -136,8 +136,20 @@ respuetasGEO = "mexico america fronteras londres monterrey yucatan portugues esp
 respuestasCIENCIAS = "saturno carne cromo einstein tinta chicozapote estrellas física renal azufre".split()
 respuestasDEPORTES = "brasil messi futbol hipodromo corea criquet halterofilia estadosunidos hockey touchdown".split()
 respuestasARTE = "queen grecia manga davinci pikachu pintor enologo twitter filosofo rocinante".split()
+palabras = "".split()
 
-palabras = 'hormiga babuino tejon murcielago oso castor camello gato almeja cobra pantera coyote cuervo ciervo perro burro pato aguila huron zorro rana cabra ganso halcon leon lagarto llama topo mono alce raton mula salamandra nutria buho panda loro paloma piton conejo carnero rata cuervo rinoceronte salmon foca tiburon oveja mofeta perezoso serpiente araña cigüeña cisne tigre sapo trucha pavo tortuga comadreja ballena lobo wombat cebra'.split()
+categoria = input("¿ Que categoria quieres ?")
+
+if categoria == "Historia":
+    palabras = respuestasHISTORIA
+elif categoria == "Geografia":
+    palabras = respuetasGEO
+elif categoria == "Ciencia":
+    palabras = respuestasCIENCIAS
+elif categoria == "Deportes":
+    palabras = respuestasDEPORTES
+elif categoria == "Arte":
+    palabras = respuestasARTE
 
 def obtenerPalabraAlAzar(listaDePalabras):
     # Esta función devuelve una cadena al azar de la lista de cadenas pasada como argumento.
@@ -166,6 +178,18 @@ def mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palab
 def obtenerIntento(letrasProbadas):
     # Devuelve la letra ingresada por el jugador. Verifica que el jugador ha ingresado sólo una letra, y no otra cosa.
     while True:
+        
+        if categoria == "Historia":
+            print(HISTORIA[palabraSecreta])
+        elif categoria == "Geografia":
+            print(GEOGRAFIA[palabraSecreta])
+        elif categoria == "Deportes":
+            print(DEPORTES[palabraSecreta])
+        elif categoria == "Ciencia":
+            print(CIENCIA[palabraSecreta])
+        elif categoria == "Arte":
+            print(ARTE[palabraSecreta])
+        
         print('Adivina una letra.')
         intento = input()
         intento = intento.lower()
@@ -219,6 +243,9 @@ while True:
 
     # Preguntar al jugador si quiere volver a jugar (pero sólo si el juego ha terminado).
     if juegoTerminado:
+        
+        palabras.remove(palabraSecreta)
+        
         if jugarDeNuevo():
             letrasIncorrectas = ''
             letrasCorrectas = ''
