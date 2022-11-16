@@ -1,4 +1,7 @@
 import random
+import time
+
+#imagenes 
 IMÁGENES_AHORCADO = ['''
 
   +---+
@@ -131,6 +134,13 @@ ARTE = {
     "rocinante": lineas[9] 
     }
 
+lis_Historia = ["Historia","HISTORIA","historia","1"]
+lis_Geografia = ["Geografia","GEOGRAFIA","geografia","2"]
+lis_Ciencia = ["Ciencia","CIENCIA","ciencia","3"]
+lis_Deportes = ["Deportes","DEPORTES","deportes","4"]
+lis_Arte = ["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5"]
+lis_Categorias =["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5","Deportes","DEPORTES","deportes","4","Ciencia","CIENCIA","ciencia","3","Historia","HISTORIA","historia","1","Geografia","GEOGRAFIA","geografia","2",]
+
 respuestasHISTORIA = "mexico faraones pacifico terremoto nazi cempasuchil anglicismos homero thriller mapas".split()
 respuetasGEO = "mexico america fronteras londres monterrey yucatan portugues españa puebla china".split()
 respuestasCIENCIAS = "saturno carne cromo einstein tinta chicozapote estrellas física renal azufre".split()
@@ -138,17 +148,61 @@ respuestasDEPORTES = "brasil messi futbol hipodromo corea criquet halterofilia e
 respuestasARTE = "queen grecia manga davinci pikachu pintor enologo twitter filosofo rocinante".split()
 palabras = "".split()
 
-categoria = input("¿ Que categoria quieres ?")
+# Bienvenida al jugador
+print("\n")
+print("¡Hola! Bienvedido a CodyGenCulture, tu juego para aprender sobre cultura general")
+print("Juego del ahorcado :)")
+print("-----------------------------------------------------------------------")
+nombre = input("¡Hola! ¿Como te llamas?: ")
+print("-----------------------------------------------------------------------")
+time.sleep(1)
 
-if categoria == "Historia":
+# Reglas del juego
+print("\n")
+print(nombre + " para empezar tienes que saber las reglas del juego:")
+print("1. Responde con tu conocimiento.")
+print("2. No uses MAYÚSCULAS, espacios, acentos o caracteres numéricos; (sólo letras).")
+print("3. ¡Diviértete!.")
+
+#Elección de un tema
+print("\n")
+print("-----------------------------------------------------------------------")
+print("Elige un tema:")
+print("\t1. Historia")
+print("\t2. Geografía")
+print("\t3. Ciencia")
+print("\t4. Deportes")
+print("\t5. Arte y entretenimiento")
+print("-----------------------------------------------------------------------")
+print("\n")
+categoria = input("Elige la que mas te guste: ")
+while True:
+    if categoria not in lis_Categorias:
+        print("Esa categoria no existe.")
+        print("Elige una categoria valida")
+        print("-----------------------------------------------------------------------")
+        print("\n")
+        print("\t1. Historia")
+        print("\t2. Geografía")
+        print("\t3. Ciencia")
+        print("\t4. Deportes")
+        print("\t5. Arte y entretenimiento")
+        print("-----------------------------------------------------------------------")
+        print("\n")
+        categoria = input("Elige la que mas te guste: ")
+    else:
+        break
+print("¡Preparate, ya empieza el juego!")
+
+if categoria in lis_Historia:
     palabras = respuestasHISTORIA
-elif categoria == "Geografia":
+elif categoria in lis_Geografia:
     palabras = respuetasGEO
-elif categoria == "Ciencia":
+elif categoria in lis_Ciencia:
     palabras = respuestasCIENCIAS
-elif categoria == "Deportes":
+elif categoria in lis_Deportes:
     palabras = respuestasDEPORTES
-elif categoria == "Arte":
+elif categoria in lis_Arte:
     palabras = respuestasARTE
 
 def obtenerPalabraAlAzar(listaDePalabras):
@@ -179,15 +233,15 @@ def obtenerIntento(letrasProbadas):
     # Devuelve la letra ingresada por el jugador. Verifica que el jugador ha ingresado sólo una letra, y no otra cosa.
     while True:
         
-        if categoria == "Historia":
+        if categoria in lis_Historia:
             print(HISTORIA[palabraSecreta])
-        elif categoria == "Geografia":
+        elif categoria in lis_Geografia:
             print(GEOGRAFIA[palabraSecreta])
-        elif categoria == "Deportes":
+        elif categoria in lis_Deportes:
             print(DEPORTES[palabraSecreta])
-        elif categoria == "Ciencia":
+        elif categoria in lis_Ciencia:
             print(CIENCIA[palabraSecreta])
-        elif categoria == "Arte":
+        elif categoria in lis_Arte:
             print(ARTE[palabraSecreta])
         
         print('Adivina una letra.')
@@ -204,7 +258,7 @@ def obtenerIntento(letrasProbadas):
 
 def jugarDeNuevo():
     # Esta función devuelve True si el jugador quiere volver a jugar, en caso contrario devuelve False.
-    print('¿Quieres jugar de nuevo? (sí o no)')
+    print('¿Quieres seguir jugando ? (sí o no)')
     return input().lower().startswith('s')
 
 
@@ -244,7 +298,10 @@ while True:
     # Preguntar al jugador si quiere volver a jugar (pero sólo si el juego ha terminado).
     if juegoTerminado:
         
-        palabras.remove(palabraSecreta)
+        if len(palabras) > 0:
+            palabras.remove(palabraSecreta)
+        else:
+            print("WOW Has acabado esta categoria te gustaria eleguir otra ?")
         
         if jugarDeNuevo():
             letrasIncorrectas = ''
@@ -256,4 +313,3 @@ while True:
 
             
             
-    
