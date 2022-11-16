@@ -1,5 +1,6 @@
 from random import randint
 
+
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
 CARD_MAP = {
@@ -38,11 +39,12 @@ def get_hand_value(cards):
         return val + 1
     else:
         return val    
-    
+lis_val = []
 def show_hand(name, cards):
     faces = [CARD_MAP[card] for card in cards]
     val = get_hand_value(cards)
-
+    lis_val.append(val)
+    
     if val == 21:
         note = "BLACK JACK! ^w^"
     elif val > 21:
@@ -50,7 +52,7 @@ def show_hand(name, cards):
     else:
         note = ""
 
-    print (name,"Hand:" ,faces,"Total:" ,val, note)    
+    print (name,"Hand:",faces,"Total:",note)    
 
 #!-----------------------FIN DE FUNCIONES-----------------------------------
 
@@ -84,6 +86,9 @@ while roud == True:
     for name in list_players_begin:
         cards = (deal(), deal(),deal())
         show_hand(name, cards)
+    if 21 not in lis_val:
+        print ("")
+        
         
     roud = input("Quieres jugar otras ronda ?: ")
     
