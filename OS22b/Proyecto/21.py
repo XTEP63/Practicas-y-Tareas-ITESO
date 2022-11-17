@@ -1,6 +1,31 @@
 from random import randint
+import time
 
 
+
+dealer_win = """
+|---\   |----       /-\      |      |----  |---\   
+|    \  |          /   \     |      |      |    |  
+|     | |--       /     \    |      |--    |---/    
+|    /  |        /-------\   |      |      |   \   
+|---/   |----   /         \  |____  |----  |    \  
+"""
+
+win = """
+\                 /    _________   |\    |
+ \      ___      /         |       | \   |
+  \    /   \    /          |       |  \  |
+   \  /     \  /           |       |   \ | 
+    \/       \/        ____|____   |    \|
+"""
+
+player = """
+|----\  |         /-\      \    /  |----  |---\
+|     | |        /   \      \  /   |      |    |
+|----/  |       /     \      \/    |--    |---/
+|       |      /-------\     /     |      |   \
+|       |___  /         \   /      |----  |    \
+"""
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
 CARD_MAP = {
@@ -87,7 +112,11 @@ while roud == True:
         cards = (deal(), deal(),deal())
         show_hand(name, cards)
     if 21 not in lis_val:
-        print ("")
+        print("\n",dealer_win)
+        print("\n",win)
+    elif 21 in lis_val:
+        print("\n",player)
+        print("\n",win)
         
         
     roud = input("Quieres jugar otras ronda ?: ")

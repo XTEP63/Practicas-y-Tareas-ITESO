@@ -1,9 +1,78 @@
-import random
 import time
+import random
 
-#imagenes 
+def elegirCategoria():
+    # Validación de categorías
+    lis_Historia = ["Historia","HISTORIA","historia","1"]
+    lis_Geografia = ["Geografia","GEOGRAFIA","geografia","2"]
+    lis_Ciencia = ["Ciencia","CIENCIA","ciencia","3"]
+    lis_Deportes = ["Deportes","DEPORTES","deportes","4"]
+    lis_Arte = ["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5"]
+    lis_Categorias =["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5","Deportes","DEPORTES","deportes","4","Ciencia","CIENCIA","ciencia","3","Historia","HISTORIA","historia","1","Geografia","GEOGRAFIA","geografia","2",]
+
+    #Respuestas -----
+    respuestasHISTORIA = "mexico faraones pacifico terremoto nazi cempasuchil anglicismos homero thriller mapas".split()
+    respuetasGEO = "mexico america fronteras londres monterrey yucatan portugues españa puebla china".split()
+    respuestasCIENCIAS = "saturno carne cromo einstein tinta chicozapote estrellas fisica renal azufre".split()
+    respuestasDEPORTES = "brasil messi futbol hipodromo corea criquet halterofilia estadosunidos hockey touchdown".split()
+    respuestasARTE = "queen grecia manga davinci pikachu pintor enologo twitter filosofo rocinante".split()
+    palabras = "".split()
+
+    #Elección de un tema
+    print("\n")
+    print("-----------------------------------------------------------------------")
+    print("Elige un tema:")
+    print("\t1. Historia")
+    print("\t2. Geografía")
+    print("\t3. Ciencia")
+    print("\t4. Deportes")
+    print("\t5. Arte y entretenimiento")
+    print("-----------------------------------------------------------------------")
+    print("\n")
+
+    # Validación de la respuuesta de categorías
+    categoria = input("Elige la que mas te guste: ")
+    while True:
+        if categoria not in lis_Categorias:
+            print("Esa categoria no existe.")
+            print("Elige una categoria válida")
+            print("-----------------------------------------------------------------------")
+            print("\n")
+            print("\t1. Historia")
+            print("\t2. Geografía")
+            print("\t3. Ciencia")
+            print("\t4. Deportes")
+            print("\t5. Arte y entretenimiento")
+            print("-----------------------------------------------------------------------")
+            print("\n")
+            categoria = input("Elige la que mas te guste: ")
+        else:
+            break
+    print("¡Preparate, ya empieza el juego!")
+
+    # Respuestas según la categoría
+    if categoria in lis_Historia:
+        palabras = respuestasHISTORIA
+        cat = "Historia"
+    elif categoria in lis_Geografia:
+        palabras = respuetasGEO
+        cat = "Geografia"
+    elif categoria in lis_Ciencia:
+        palabras = respuestasCIENCIAS
+        cat = "Ciencia"
+    elif categoria in lis_Deportes:
+        palabras = respuestasDEPORTES
+        cat = "Deportes"
+    elif categoria in lis_Arte:
+        palabras = respuestasARTE
+        cat = "Arte"
+
+    return cat, palabras
+
+
+jugar_no = "No", "no", "nO", "NO", "n", "N"
+jugar_si = "Si", "si", "sI", "SI", "s", "S"
 IMÁGENES_AHORCADO = ['''
-
   +---+
   |   |
       |
@@ -18,7 +87,7 @@ IMÁGENES_AHORCADO = ['''
       |
       |
       |
-=========''', '''
+=========''', '''      
 
   +---+
   |   |
@@ -60,7 +129,9 @@ IMÁGENES_AHORCADO = ['''
       |
 =========''']
 
-lineas = [line.rstrip('\n') for line in open("Proyecto/historia.txt")]
+#Diccionarios de categorías
+# Historia
+lineas = [line.rstrip('\n') for line in open("historia.txt")]
 HISTORIA = {
     "mexico": lineas[0], 
     "faraones": lineas[1], 
@@ -75,7 +146,7 @@ HISTORIA = {
     }
 
 # GEOGRAFÍA
-lineas = [line.rstrip('\n') for line in open("Proyecto/geografia.txt")]
+lineas = [line.rstrip('\n') for line in open("geografia.txt")]
 GEOGRAFIA = {
     "mexico": lineas[0], 
     "america": lineas[1], 
@@ -90,7 +161,7 @@ GEOGRAFIA = {
     }
 
 # CIENCIA
-lineas = [line.rstrip('\n') for line in open("Proyecto/ciencia.txt")]
+lineas = [line.rstrip('\n') for line in open("ciencia.txt")]
 CIENCIA = {
     "saturno": lineas[0], 
     "carne": lineas[1], 
@@ -105,7 +176,7 @@ CIENCIA = {
     }
 
 # DEPORTES
-lineas = [line.rstrip('\n') for line in open("Proyecto/deportes.txt")]
+lineas = [line.rstrip('\n') for line in open("deportes.txt")]
 DEPORTES = {
     "brasil": lineas[0], 
     "messi": lineas[1], 
@@ -120,7 +191,7 @@ DEPORTES = {
     }
 
 # ARTE-ENTRETENIMIENTO
-lineas = [line.rstrip('\n') for line in open("Proyecto/arte-entretenimiento.txt")]
+lineas = [line.rstrip('\n') for line in open("arte-entretenimiento.txt")]
 ARTE = {
     "queen": lineas[0], 
     "grecia": lineas[1], 
@@ -134,19 +205,7 @@ ARTE = {
     "rocinante": lineas[9] 
     }
 
-lis_Historia = ["Historia","HISTORIA","historia","1"]
-lis_Geografia = ["Geografia","GEOGRAFIA","geografia","2"]
-lis_Ciencia = ["Ciencia","CIENCIA","ciencia","3"]
-lis_Deportes = ["Deportes","DEPORTES","deportes","4"]
-lis_Arte = ["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5"]
-lis_Categorias =["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5","Deportes","DEPORTES","deportes","4","Ciencia","CIENCIA","ciencia","3","Historia","HISTORIA","historia","1","Geografia","GEOGRAFIA","geografia","2",]
 
-respuestasHISTORIA = "mexico faraones pacifico terremoto nazi cempasuchil anglicismos homero thriller mapas".split()
-respuetasGEO = "mexico america fronteras londres monterrey yucatan portugues españa puebla china".split()
-respuestasCIENCIAS = "saturno carne cromo einstein tinta chicozapote estrellas física renal azufre".split()
-respuestasDEPORTES = "brasil messi futbol hipodromo corea criquet halterofilia estadosunidos hockey touchdown".split()
-respuestasARTE = "queen grecia manga davinci pikachu pintor enologo twitter filosofo rocinante".split()
-palabras = "".split()
 
 # Bienvenida al jugador
 print("\n")
@@ -161,54 +220,17 @@ time.sleep(1)
 print("\n")
 print(nombre + " para empezar tienes que saber las reglas del juego:")
 print("1. Responde con tu conocimiento.")
-print("2. No uses MAYÚSCULAS, espacios, acentos o caracteres numéricos; (sólo letras).")
+print("2. No uses espacios, acentos o caracteres numéricos; (sólo letras).")
 print("3. ¡Diviértete!.")
 
-#Elección de un tema
-print("\n")
-print("-----------------------------------------------------------------------")
-print("Elige un tema:")
-print("\t1. Historia")
-print("\t2. Geografía")
-print("\t3. Ciencia")
-print("\t4. Deportes")
-print("\t5. Arte y entretenimiento")
-print("-----------------------------------------------------------------------")
-print("\n")
-categoria = input("Elige la que mas te guste: ")
-while True:
-    if categoria not in lis_Categorias:
-        print("Esa categoria no existe.")
-        print("Elige una categoria valida")
-        print("-----------------------------------------------------------------------")
-        print("\n")
-        print("\t1. Historia")
-        print("\t2. Geografía")
-        print("\t3. Ciencia")
-        print("\t4. Deportes")
-        print("\t5. Arte y entretenimiento")
-        print("-----------------------------------------------------------------------")
-        print("\n")
-        categoria = input("Elige la que mas te guste: ")
-    else:
-        break
-print("¡Preparate, ya empieza el juego!")
-
-if categoria in lis_Historia:
-    palabras = respuestasHISTORIA
-elif categoria in lis_Geografia:
-    palabras = respuetasGEO
-elif categoria in lis_Ciencia:
-    palabras = respuestasCIENCIAS
-elif categoria in lis_Deportes:
-    palabras = respuestasDEPORTES
-elif categoria in lis_Arte:
-    palabras = respuestasARTE
+categoria, palabras = elegirCategoria()
 
 def obtenerPalabraAlAzar(listaDePalabras):
     # Esta función devuelve una cadena al azar de la lista de cadenas pasada como argumento.
+    
     índiceDePalabras = random.randint(0, len(listaDePalabras) - 1)
-    return listaDePalabras[índiceDePalabras]
+    return listaDePalabras[índiceDePalabras]        
+        
 
 def mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta):
     print(IMÁGENES_AHORCADO[len(letrasIncorrectas)])
@@ -229,19 +251,19 @@ def mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palab
         print(letra, end=' ')
     print()
 
-def obtenerIntento(letrasProbadas):
+def obtenerIntento(categoria, letrasProbadas):
     # Devuelve la letra ingresada por el jugador. Verifica que el jugador ha ingresado sólo una letra, y no otra cosa.
     while True:
         
-        if categoria in lis_Historia:
+        if categoria == "Historia":
             print(HISTORIA[palabraSecreta])
-        elif categoria in lis_Geografia:
+        elif categoria == "Geografia":
             print(GEOGRAFIA[palabraSecreta])
-        elif categoria in lis_Deportes:
+        elif categoria == "Deportes":
             print(DEPORTES[palabraSecreta])
-        elif categoria in lis_Ciencia:
+        elif categoria == "Ciencia":
             print(CIENCIA[palabraSecreta])
-        elif categoria in lis_Arte:
+        elif categoria == "Arte":
             print(ARTE[palabraSecreta])
         
         print('Adivina una letra.')
@@ -272,7 +294,7 @@ while True:
     mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta)
 
     # Permite al jugador escribir una letra.
-    intento = obtenerIntento(letrasIncorrectas + letrasCorrectas)
+    intento = obtenerIntento(categoria,letrasIncorrectas + letrasCorrectas)
 
     if intento in palabraSecreta:
         letrasCorrectas = letrasCorrectas + intento
@@ -300,14 +322,16 @@ while True:
         
         if len(palabras) > 0:
             palabras.remove(palabraSecreta)
-        else:
-            print("WOW Has acabado esta categoria te gustaria eleguir otra ?")
-        
+
+        if len(palabras) == 0:
+            print("WOW! Has acabado esta categoria te gustaria eleguir otra ?")
+            
         if jugarDeNuevo():
+            categoria, palabras = elegirCategoria()
             letrasIncorrectas = ''
             letrasCorrectas = ''
             juegoTerminado = False
             palabraSecreta = obtenerPalabraAlAzar(palabras)
         else:
             break
-            
+
