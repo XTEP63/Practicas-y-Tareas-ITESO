@@ -49,7 +49,7 @@ def progres_bar(part,total,leght = 30):
     frac = part/total
     completed = int(frac * leght)
     mising = leght - completed
-    bar = f"[{'#'*completed}{'-'*mising}]{frac:.2%}"
+    bar = f"[{'■'*completed}{' '*mising}]{frac:.2%}"
     return bar
 
 def deal():
@@ -94,10 +94,15 @@ roud =True
 n = 30
 
 #* --------------------GAME--------------------------- 
-
+print("\n")
+print("Hola y bien benidino a este 21 BLACK JACK!!!")
+print("\n")
+print("Esra version del juego a sido modificada")
+print("Por lo que se te entragaran 3 cartas de manera automatica")
+print("Para obtener tu puntaje")
 for i in range(n + 1):
     time.sleep(0.1)
-    print(progres_bar(1,n,35), end = "\r")
+    print(progres_bar(i,n,100), end = "\r")
 print("\n")
 
 while roud == True:
