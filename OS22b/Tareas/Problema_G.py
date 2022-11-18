@@ -10,7 +10,11 @@ for i in range(juegos):
     celd = ["cerrado"] * celdas    
     for j in range(rondas):
         for k in range(celdas):
+<<<<<<< HEAD
             if k % (j+1) == 0:
+=======
+            if k % j == 0:
+>>>>>>> Tareas
                 if celd[k] == "cerrado":
                     celd[k] = "abierto"
                 elif celd[k] == "abierto":
