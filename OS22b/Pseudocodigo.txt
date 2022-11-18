@@ -1,0 +1,37 @@
+1- Importar desde la biblioteca "random" la funcion "randint"
+2- Importar la biblioteca "time"
+3- Declarar variables que contengan el resultado de la ronda
+4- Establecer una variable que creara todas las cartas y palos.
+5- Establecer una variable diccionario que contenga todos los valores del 1 al 13, utilizando la funcion anterior y dando valores a las cartas
+6- Definir la funcion que repartira las cartas a los jugadores, regresando un randint(1, 13)
+7- Definir la funcion que realizara la suma de valores de las cartas de los jugadores (individualmente), evaluando el valor de las cartas y comprobando si su valor sumado es menor, igual
+o mayor a 21.
+8- Establecer una funcion en la que se muestre las cartas del jugador a la vez de mostrar al jugador, sus cartas,el valor final y su resultado (Si perdio o gano).
+9- Crear una variable lista (list_yes) en la que contenga todas las variaciones escritas de la palabra "Si"
+10- Crear una variable lista (list_no) en la que contenga todas las variaciones escritas de la palabra "No"
+11- Establecer una variable que tenga el valor "True"
+12- Establecer un ciclo verificando si la variable anterior es igual a "True"
+	13- Establecer un ciclo que se active mientras el ciclo anterior sea "True" 
+		14- Pedir el numero de jugadores y evaluar si el valor dado es numerico y si el valor es mayor a 1.
+15- Crear una variable lista con la palabra "Dealear".
+16 - Crear un ciclo for "i" en el rango de la variable que contenga el valor de jugadores.
+	17-En la variable lista anterior, agregar la palabra "Player" junto el valor string de i+1)
+18- Crear un ciclo for "name" en la variable lista anterior.
+	19- Establecer la variable en la que se guardaran las cartas del jugador ("cards") y utilizar 3 veces la funcion preestablecida para repartir cartas.
+	20- Utilizar la funcion para mostrar las cartas del jugador utilizando las variables "name" y "cards"
+21- Evaluar si 21 no esta en el valor total de las cartas del jugador
+	22- Si no esta, informar que el dealer es el ganador
+23- Evaluar si 21 esta en el valor total de las cartas del jugador
+	24- Si esta, informar que el jugador es el ganador
+25- Preguntar si se quiere jugar de nuevo (roud)
+26- Establecer un ciclo mientras sea verdadero
+	27- Evaluar si la respuesta es alguna variacion de la lista (List_yes)
+		28- roud = True
+		29- break
+	30- Evaluar si la respuesta es alguna variacion de la lista (List_no)
+		31- roud = False
+		32- break
+	31- Si la respuesta no es alguna variacion de las listas (list_yes)(list_no)
+		32 - "Si o No, -_-"
+		33- Volver a preguntar si se quiere jugar otra ronda (roud)
+		34- continue
