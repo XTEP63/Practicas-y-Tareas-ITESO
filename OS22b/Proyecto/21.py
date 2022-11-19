@@ -1,6 +1,7 @@
 from random import randint
 import time
-
+"""import keyboard
+"""
 #!----------------------Images-------------------------
 dealer_win = """
 |---\   |----       /-\      |      |----  |---\   
@@ -93,7 +94,8 @@ list_no = ["no","No","NO","nO"]
 roud =True
 n = 30
 
-#* --------------------GAME--------------------------- 
+#?-------------------------presentacion------------------
+
 print("\n")
 print("Hola y bien benidino a este 21 BLACK JACK!!!")
 print("\n")
@@ -105,6 +107,8 @@ for i in range(n + 1):
     print(progres_bar(i,n,100), end = "\r")
 print("\n")
 
+
+#* --------------------GAME--------------------------- 
 while roud == True:
     while True:
 
