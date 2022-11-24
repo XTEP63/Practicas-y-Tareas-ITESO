@@ -85,33 +85,46 @@ def show_hand(name, cards):
         note = ""
 
     print (name,"Hand:",faces,"Total:",note)    
+    
+#?-------------------------presentacion------------------
+def PRESENTATION():
+    print("\n")
+    print("Hola y bien benidino a este 21 BLACK JACK!!!")
+    print("\n")
+    print("Esra version del juego a sido modificada")
+    print("Por lo que se te entragaran 3 cartas de manera automatica")
+    print("Para obtener tu puntaje")
+    print("\n")
+    print("Presiona ENTER para comenzar")
+    while True:
+        entrada = input()
+        if entrada == "":
+            for i in range(n + 1):
+                time.sleep(0.1)
+                print(progres_bar(i,n,100), end = "\r")
+            break
+        else:
+            print("Presiona ENTER para comenzar")
+            entrada = input()
+    print("\n")
 
 #!-----------------------FIN DE FUNCIONES-----------------------------------
 
 #TODO Varibles iniciales
 list_yes = ["si","Si","si","sI"]
 list_no = ["no","No","NO","nO"]
-roud =True
+rou =True
 n = 30
-
-#?-------------------------presentacion------------------
-
-print("\n")
-print("Hola y bien benidino a este 21 BLACK JACK!!!")
-print("\n")
-print("Esra version del juego a sido modificada")
-print("Por lo que se te entragaran 3 cartas de manera automatica")
-print("Para obtener tu puntaje")
-for i in range(n + 1):
-    time.sleep(0.1)
-    print(progres_bar(i,n,100), end = "\r")
-print("\n")
-
+game_begin = True
 
 #* --------------------GAME--------------------------- 
-while roud == True:
-    while True:
 
+while rou == True:
+    if game_begin == True:
+        PRESENTATION()
+    
+    while True:
+        m = 0
         try:
             Players = int(input("Cuantos jugadores van a jugar: "))
         except ValueError:
@@ -144,10 +157,11 @@ while roud == True:
     
     while True:
         if roud in list_yes:
-            roud = True
+            rou = True
+            game_begin = False
             break
         elif roud in list_no:
-            roud = False
+            game_begin = True
             break
         else:
             print("Si o No, -_-")
