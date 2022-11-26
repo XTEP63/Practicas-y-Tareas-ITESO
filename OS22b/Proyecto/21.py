@@ -2,30 +2,6 @@ from random import randint
 import time
 """import keyboard
 """
-#!----------------------Images-------------------------
-dealer_win = """
-|---\   |----       /-\      |      |----  |---\   
-|    \  |          /   \     |      |      |    |  
-|     | |--       /     \    |      |--    |---/    
-|    /  |        /-------\   |      |      |   \   
-|---/   |----   /         \  |____  |----  |    \  
-"""
-
-win = """
-\                 /    _________   |\    |
- \      ___      /         |       | \   |
-  \    /   \    /          |       |  \  |
-   \  /     \  /           |       |   \ | 
-    \/       \/        ____|____   |    \|
-"""
-
-player = """
-|----\  |         /-\      \    /  |----  |---\
-|     | |        /   \      \  /   |      |    |
-|----/  |       /     \      \/    |--    |---/
-|       |      /-------\     /     |      |   \
-|       |___  /         \   /      |----  |    \
-"""
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
 CARD_MAP = {
@@ -45,6 +21,16 @@ CARD_MAP = {
     }
 
 #!-----------------------INCIO DE FUNCIONES---------------------------------
+def dealer_win():
+    print("The dealer wins")
+    print("Que mal parece que haz perdido -_-")
+    print("Mejor suerte la proxima ")
+    print("\n")
+    
+def player_win(num_player_win):
+    print("WOW !!!")
+    print("Parece que un Jugador a ganado ^w^")
+    print("Player"+str(num_player_win))
 
 def progres_bar(part,total,leght = 30):
     frac = part/total
@@ -79,12 +65,10 @@ def show_hand(name, cards):
     
     if val == 21:
         note = "BLACK JACK! ^w^"
-    elif val > 21:
-        note = "PERDISTE -_-"
     else:
         note = ""
-
-    print (name,"Hand:",faces,"Total:",note)    
+    print("\n")
+    print (name,"Hand:",faces[0],faces[1],faces[2],note)    
     
 #?-------------------------presentacion------------------
 def PRESENTATION():
@@ -116,6 +100,7 @@ list_no = ["no","No","NO","nO"]
 rou =True
 n = 30
 game_begin = True
+list_winers = []
 
 #* --------------------GAME--------------------------- 
 
@@ -145,13 +130,14 @@ while rou == True:
     for name in list_players_begin:
         cards = (deal(), deal(),deal())
         show_hand(name, cards)
-    if 21 not in lis_val:
-        print("\n",dealer_win)
-        print("\n",win)
-    elif 21 in lis_val:
-        print("\n",player)
-        print("\n",win)
-        
+    if 21 in lis_val:    
+        if lis_val.index(21) == 0 :
+            dealer_win()
+        else:
+            num_player_win = lis_val.index(21)
+            player_win(num_player_win)
+    else:
+        dealer_win()
         
     roud = input("Quieres jugar otras ronda ?: ")
     

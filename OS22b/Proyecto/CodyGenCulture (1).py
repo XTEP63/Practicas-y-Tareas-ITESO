@@ -131,7 +131,8 @@ IMÁGENES_AHORCADO = ['''
 
 #Diccionarios de categorías
 # Historia
-lineas = [line.rstrip('\n') for line in open("historia.txt")]
+lineas = [line.rstrip('\n') for line in open("Proyecto/historia.txt")]
+
 HISTORIA = {
     "mexico": lineas[0], 
     "faraones": lineas[1], 
@@ -146,7 +147,7 @@ HISTORIA = {
     }
 
 # GEOGRAFÍA
-lineas = [line.rstrip('\n') for line in open("geografia.txt")]
+lineas = [line.rstrip('\n') for line in open("Proyecto/geografia.txt")]
 GEOGRAFIA = {
     "mexico": lineas[0], 
     "america": lineas[1], 
@@ -161,7 +162,7 @@ GEOGRAFIA = {
     }
 
 # CIENCIA
-lineas = [line.rstrip('\n') for line in open("ciencia.txt")]
+lineas = [line.rstrip('\n') for line in open("Proyecto/ciencia.txt")]
 CIENCIA = {
     "saturno": lineas[0], 
     "carne": lineas[1], 
@@ -176,7 +177,7 @@ CIENCIA = {
     }
 
 # DEPORTES
-lineas = [line.rstrip('\n') for line in open("deportes.txt")]
+lineas = [line.rstrip('\n') for line in open("Proyecto/deportes.txt")]
 DEPORTES = {
     "brasil": lineas[0], 
     "messi": lineas[1], 
@@ -191,7 +192,7 @@ DEPORTES = {
     }
 
 # ARTE-ENTRETENIMIENTO
-lineas = [line.rstrip('\n') for line in open("arte-entretenimiento.txt")]
+lineas = [line.rstrip('\n') for line in open("Proyecto/arte-entretenimiento.txt")]
 ARTE = {
     "queen": lineas[0], 
     "grecia": lineas[1], 
