@@ -328,7 +328,8 @@ while True:
             print("WOW! Has acabado esta categoria te gustaria eleguir otra ?")
             
         if jugarDeNuevo():
-            categoria, palabras = elegirCategoria()
+            if len(palabras) == 1:
+                categoria, palabras = elegirCategoria()
             letrasIncorrectas = ''
             letrasCorrectas = ''
             juegoTerminado = False
