@@ -1,7 +1,6 @@
 from random import randint
 import time
-"""import keyboard
-"""
+
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
 CARD_MAP = {
