@@ -11,13 +11,13 @@ def elegirCategoria():
     lis_Categorias =["Arte y entretenimiento","Arte","ARTE","ARTE Y ENTRETENIMIENTO","arte","arte y entretenimiento","5","Deportes","DEPORTES","deportes","4","Ciencia","CIENCIA","ciencia","3","Historia","HISTORIA","historia","1","Geografia","GEOGRAFIA","geografia","2",]
 
     #Respuestas -----
-    respuestasHISTORIA = "mexico faraones pacifico terremoto nazi cempasuchil anglicismos homero thriller mapas".split()
+    respuestasHISTORIA = "mexico ".split()
     respuetasGEO = "mexico america fronteras londres monterrey yucatan portugues españa puebla china".split()
     respuestasCIENCIAS = "saturno carne cromo einstein tinta chicozapote estrellas fisica renal azufre".split()
     respuestasDEPORTES = "brasil messi futbol hipodromo corea criquet halterofilia estadosunidos hockey touchdown".split()
     respuestasARTE = "queen grecia manga davinci pikachu pintor enologo twitter filosofo rocinante".split()
     palabras = "".split()
-
+    
     #Elección de un tema
     print("\n")
     print("-----------------------------------------------------------------------")
@@ -282,7 +282,17 @@ def obtenerIntento(categoria, letrasProbadas):
 def jugarDeNuevo():
     # Esta función devuelve True si el jugador quiere volver a jugar, en caso contrario devuelve False.
     print('¿Quieres seguir jugando ? (sí o no)')
-    return input().lower().startswith('s')
+    roud = input()
+    
+    while True:
+        if roud in ["si","Si","si","sI"]:
+            return ("s")
+        elif roud in ["no","No","NO","nO"]:
+            break
+        else:
+            print("Si o No, -_-")
+            roud = input("Quieres jugar otras ronda ?: ")
+            continue
 
 
 print('A H O R C A D O')
