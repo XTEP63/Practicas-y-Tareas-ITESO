@@ -1,6 +1,7 @@
 from random import randint
 import time
 
+
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
 CARD_MAP = {
@@ -21,15 +22,17 @@ CARD_MAP = {
 
 #!-----------------------INCIO DE FUNCIONES---------------------------------
 def dealer_win():
+    print("\n")
     print("The dealer wins")
     print("Que mal parece que haz perdido -_-")
     print("Mejor suerte la proxima ")
     print("\n")
     
-def player_win(num_player_win):
+def player_win():
+    print("\n")
     print("WOW !!!")
     print("Parece que un Jugador a ganado ^w^")
-    print("Player"+str(num_player_win))
+    print("\n")
 
 def progres_bar(part,total,leght = 30):
     frac = part/total
@@ -56,7 +59,7 @@ def get_hand_value(cards):
         return val + 1
     else:
         return val    
-lis_val = []
+
 def show_hand(name, cards):
     faces = [CARD_MAP[card] for card in cards]
     val = get_hand_value(cards)
@@ -67,8 +70,64 @@ def show_hand(name, cards):
     else:
         note = ""
     print("\n")
-    print (name,"Hand:",faces[0],faces[1],faces[2],note)    
+    print (name,"Hand:",end=" ") 
+    for i in faces:
+        print(i, end=" ")
+    print(note)
     
+def Cards_n(num):
+    cards = []
+    for i in range(num):
+        cards.append(deal())
+    return cards
+        
+def numi():
+    while True:
+        
+        try:
+            num = int(input("Con cuantas cartas quieres jugar: "))
+        except ValueError:
+            print("Debes escribir un número -_-")
+            continue
+
+        if num < 2:
+            print("Debe ser positivo -_-")
+            continue
+        else:
+            break
+    return num
+
+def playeri():
+    while True:
+        
+        try:
+            Players = int(input("Cuantos jugadores van a jugar: "))
+        except ValueError:
+            print("Debes escribir un número -_-")
+            continue
+
+        if Players < 1:
+            print("Debe ser positivo -_-")
+            continue
+        else:
+            break
+    return Players
+
+def roud_game_begin():
+    roud = input("Quieres jugar otras ronda ?: ")
+    while True:
+        if roud in list_yes:
+            game_begin = False
+            break
+        elif roud in list_no:
+            game_begin = True
+            break
+        else:
+            print("Si o No, -_-")
+            roud = input("Quieres jugar otras ronda ?: ")
+            continue
+    return game_begin
+
 #?-------------------------presentacion------------------
 def PRESENTATION():
     print("\n")
@@ -90,7 +149,6 @@ def PRESENTATION():
             print("Presiona ENTER para comenzar")
             entrada = input()
     print("\n")
-
 #!-----------------------FIN DE FUNCIONES-----------------------------------
 
 #TODO Varibles iniciales
@@ -100,55 +158,30 @@ rou =True
 n = 30
 game_begin = True
 list_winers = []
-
+lis_val = []
 #* --------------------GAME--------------------------- 
 
 while rou == True:
     if game_begin == True:
         PRESENTATION()
-    
-    while True:
-        m = 0
-        try:
-            Players = int(input("Cuantos jugadores van a jugar: "))
-        except ValueError:
-            print("Debes escribir un número -_-")
-            continue
+    num = numi()
+    Players = playeri()
 
-        if Players < 1:
-            print("Debe ser positivo -_-")
-            continue
-        else:
-            break
-    
     list_players_begin = ["Dealear"]
     
     for i in range(Players):
         list_players_begin.append("Player" + str(i + 1))
 
     for name in list_players_begin:
-        cards = (deal(), deal(),deal())
+        cards = Cards_n(num)
         show_hand(name, cards)
     if 21 in lis_val:    
         if lis_val.index(21) == 0 :
             dealer_win()
         else:
             num_player_win = lis_val.index(21)
-            player_win(num_player_win)
+            player_win()
     else:
         dealer_win()
-        
-    roud = input("Quieres jugar otras ronda ?: ")
     
-    while True:
-        if roud in list_yes:
-            rou = True
-            game_begin = False
-            break
-        elif roud in list_no:
-            game_begin = True
-            break
-        else:
-            print("Si o No, -_-")
-            roud = input("Quieres jugar otras ronda ?: ")
-            continue
+    game_begin = roud_game_begin()
