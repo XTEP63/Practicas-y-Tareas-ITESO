@@ -1,24 +1,13 @@
 from random import randint
 import time
 
-
 #TODO dicionario de cartas 
 lineas = [line.rstrip('\n') for line in open("Proyecto/Cards_Face.txt")]
-CARD_MAP = {
-    1: lineas[0], 
-    2: lineas[1], 
-    3: lineas[2], 
-    4: lineas[3], 
-    5: lineas[4], 
-    6: lineas[5], 
-    7: lineas[6], 
-    8: lineas[7], 
-    9: lineas[8], 
-    10: lineas[9], 
-    11: lineas[10], 
-    12: lineas[11],
-    13: lineas[12]
-    }
+
+CARD_MAP = {}
+
+for i in range(len(lineas)):
+    CARD_MAP[i+1] = lineas[i]
 
 #!-----------------------INCIO DE FUNCIONES---------------------------------
 def dealer_win():
@@ -134,10 +123,10 @@ def PRESENTATION():
     print("Hola y bien benidino a este 21 BLACK JACK!!!")
     print("\n")
     print("Esra version del juego a sido modificada")
-    print("Por lo que se te entragaran 3 cartas de manera automatica")
+    print("Por lo que se te entragaran n cartas de manera automatica")
     print("Para obtener tu puntaje")
     print("\n")
-    print("Presiona ENTER para comenzar")
+    print("Presiona ENTER para comenzar ")
     while True:
         entrada = input()
         if entrada == "":
@@ -154,14 +143,13 @@ def PRESENTATION():
 #TODO Varibles iniciales
 list_yes = ["si","Si","si","sI"]
 list_no = ["no","No","NO","nO"]
-rou =True
 n = 30
 game_begin = True
 list_winers = []
 lis_val = []
 #* --------------------GAME--------------------------- 
 
-while rou == True:
+while True:
     if game_begin == True:
         PRESENTATION()
     num = numi()
